@@ -1,6 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# TODO: Change the name
 projectname = 'projectname'
 
 def Kernel.is_windows?
@@ -11,8 +12,10 @@ end
 Vagrant.configure("2") do |config|
   config.vm.hostname = projectname
   config.vm.box = "ubuntu/trusty64"
+# TODO: Change the directory
   config.vm.network :private_network, ip: "199.199.199.10"
 
+# TODO: Change the directory
   config.vm.synced_folder "../" + projectname , "/var/www/" + projectname + "/current", type: "nfs"
 
   config.vm.provider "virtualbox" do |v|
