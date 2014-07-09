@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-projectname = 'symfonyproject'
+projectname = 'projectname'
 
 def Kernel.is_windows?
     processor, platform, *rest = RUBY_PLATFORM.split("-")
@@ -11,11 +11,9 @@ end
 Vagrant.configure("2") do |config|
   config.vm.hostname = projectname
   config.vm.box = "ubuntu/trusty64"
-  #config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box"
   config.vm.network :private_network, ip: "199.199.199.10"
-  config.vm.network "public_network"
 
-  config.vm.synced_folder "./", "/var/www/" + projectname + "/current", type: "nfs"
+  config.vm.synced_folder "../" + projectname , "/var/www/" + projectname + "/current", type: "nfs"
 
   config.vm.provider "virtualbox" do |v|
     v.customize ["modifyvm", :id, "--cpuexecutioncap", "100"]
