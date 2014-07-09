@@ -4,7 +4,7 @@ symfony-ansible
 <p>This repo will provide you an easy set-up for your symfony project. It provide the Vagrantfile to create your Ubuntu Trusty 64bits VM and it uses Ansible to provision it. You can also use ansible to provision your server</p>
 
 <h3>Step 1)</h3>
-<pre>sudo make install</pre>
+<pre>sudo make</pre>
 <p>It installs the Ansible modules needed (If a module is already installed it will show an error but it doesn't matter)</p>
 
 <h3>Step 2)</h3>
