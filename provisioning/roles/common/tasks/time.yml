@@ -1,0 +1,9 @@
+---
+# time-related tasks
+
+- name: install system packages for time management
+  apt: pkg=ntp,tzdata state=latest update-cache=yes cache_valid_time=3600
+
+- name: set timezone to {{ timezone }}
+  template: src=etc/timezone dest=/etc/timezone
+  notify: update-tzdata

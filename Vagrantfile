@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
   #config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box"
   config.vm.network :private_network, ip: "199.199.199.10"
+  config.vm.network "public_network"
 
   config.vm.synced_folder "./", "/var/www/" + projectname + "/current", type: "nfs"
 
@@ -25,9 +26,9 @@ Vagrant.configure("2") do |config|
   config.ssh.forward_agent = true
 
   # Ansible
-#  config.vm.provision "ansible" do |ansible|
-#    ansible.sudo = true
-#    ansible.playbook = "provisioning/site.yml"
-#    ansible.verbose = "v"
-#  end
+  config.vm.provision "ansible" do |ansible|
+    ansible.sudo = true
+    ansible.playbook = "provisioning/site.yml"
+    ansible.verbose = "v"
+  end
 end

@@ -1,0 +1,6 @@
+---
+# various network tweaks
+
+- name: copy network tweaks
+  copy: dest=/etc/sysctl.d/99-network-tweaks.conf src=etc/sysctl.d/99-network-tweaks.conf owner=root group=root mode=0644
+  notify: apply-network-tweaks

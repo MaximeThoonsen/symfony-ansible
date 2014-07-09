@@ -1,0 +1,3 @@
+---
+- name: sudo - change sudo group config
+  lineinfile: "dest=/etc/sudoers regexp='^%sudo' line='%sudo ALL=(ALL:ALL) NOPASSWD: NOPASSWD: ALL'"

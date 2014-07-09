@@ -1,59 +1,14 @@
 ---
-- name: Webserver for HYM app
+- name: Webserver for Symfony app
   hosts: all
+  vars_files:
+    - vars/main.yml
   sudo: yes
   gather_facts: true
   roles:
     - common        # Common packages
-#    - mysql         # Database
-    - nodejs        # API runtime and frontend builder
-    - { # Vhost for static frontend files
-      role: nginx-vhost,
-      app: {
-        name: "{{ hym.webclient.name }}",
-        port: "{{ hym.webclient.port }}",
-        path: "{{ hym.webclient.path }}/{{ hym.webclient.folder }}"
-      }
-    }
-    - { # Route to static frontend files vhost
-      role: nginx-proxy,
-      app: {
-        name: "{{ hym.webclient.name }}"
-      },
-      proxy: {
-        port: "{{ hym.webclient.port }}",
-        route: ""
-      }
-    }
-    - { # Continuously run the API server
-      role: supervisorctl,
-      app: {
-        name: "{{ hym.api.name }}",
-        path: "{{ hym.api.path }}",
-        command: npm start
-      }
-    }
-    - { # Route to the API
-      role: nginx-proxy,
-      app: {
-        name: "{{ hym.api.name }}"
-      },
-      proxy: {
-        port: "{{ hym.api.port }}",
-        route: "{{ hym.api.route }}"
-      }
-    }
+    - JasonGiedymin.nodejs
+    - nginx-symfony
+    - Ansibles.mysql         # Database
+    - ansible-role-php
 
-  vars:
-    timezone: Europe/Paris
-    hym:
-      webclient:
-        name: hym-webclient
-        path: /var/www/hym-webclient/current
-        port: 8001
-        folder: web
-      api:
-        name: hym-api
-        path: /var/www/hym-api/current
-        port: 3333
-        route: api

@@ -1,0 +1,8 @@
+---
+# update tzdata
+- name: update-tzdata
+  command: dpkg-reconfigure --frontend noninteractive tzdata
+
+# update kernel with network tweaks
+- name: apply-network-tweaks
+  command: sysctl -p /etc/sysctl.d/99-network-tweaks.conf
