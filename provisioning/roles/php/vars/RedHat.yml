@@ -1,0 +1,25 @@
+---
+
+php_conf_basepath: /etc
+
+php_conf_files:
+  - { name: php.ini, dest: '' }
+  - { name: apc.ini, dest: /php.d }
+
+php_packages:
+  - ImageMagick
+  - php
+  - php-cli
+  - php-common
+  - php-devel
+  - php-gd
+  - php-imap
+  - php-ldap
+  - php-mbstring
+  - php-pdo
+  - php-pear
+  - php-pecl-apc
+  - php-xml
+  - php-xmlrpc
+
+php_webserver_daemon: "httpd"

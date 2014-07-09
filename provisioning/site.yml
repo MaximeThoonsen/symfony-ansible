@@ -9,6 +9,6 @@
     - common        # Common packages
     - JasonGiedymin.nodejs
     - nginx-symfony
-    - Ansibles.mysql         # Database
-    - ansible-role-php
+    - Ansibles.mysql # Database
+    - php
 

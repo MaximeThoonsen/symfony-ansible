@@ -1,0 +1,25 @@
+---
+
+php_conf_basepath: /etc/php5
+
+php_conf_files:
+  - { name: php.ini, dest: /cli }
+  - { name: apc.ini, dest: /mods-available }
+
+php_mods:
+  - { name: apc.ini, dest: /cli,     size: 20 }
+
+php_packages:
+  - php5
+  - php5-fpm
+  - php5-mysql
+  - php5-mcrypt
+  - php5-cli
+  - php5-common
+  - php5-curl
+  - php5-dev
+  - php5-gd
+  - php5-ldap
+  - php-apc
+
+php_webserver_daemon: "nginx"
