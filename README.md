@@ -2,8 +2,8 @@ symfony-ansible
 ===============
 
 
-Errors you might encountered
-============================
+<h3>Errors you might encountered</h3>
+
 
 1) fatal: [default] => imported module support code does not exist at /usr/local/lib/python2.7/dist-packages/ansible/module_utils/facts.py
 Solution:
