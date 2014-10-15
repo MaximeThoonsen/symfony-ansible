@@ -14,3 +14,17 @@ mysql_users:
   - name: "{{ name }}"
     pass: "{{ name }}"
     host: "%"
+
+iptables_allowed_tcp_ports: [22, 80, 443]
+
+projects_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwgf+AZt8y1/zTE5+5tw5gtm0Y1FT55bSq8kUtO2wt8sxN42s5LpUlftQsaQKY/282m/ffgO58n86LsoLZ33ks1Ipe8wS5p6YU2MX5uh1MyoBtsTsMyLTpMCaFIFTBSNHFykN84sszQZWvQY9T6NEgK8tJHjYoMyTKHz1qcD/1Zf3aTm0YK68Zzd57kFACXae+BUgjtPoR6Ug1cDjL0T7ifdbS6oe+s3JmfLVLCbcbrvyS2dOBCpwDL4SXWp1AKLkIcUsfkNkCygwx1vSKjAz+9PxFE9gRB77fGeMuHt5Ub/mIxX8Rm2APTApFIuryo3NOh3YvcD064BMUriS+8FMn maximet@theodo.fr
+
+automysqlbackup_cron:
+  minute: 0
+  hour: "23"
+  day: "*"
+  month: "*"
+  weekday: "*"
+
+automysqlbackup_latest: "yes"

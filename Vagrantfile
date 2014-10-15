@@ -4,19 +4,14 @@
 # TODO: Change the name
 projectname = 'projectname'
 
-def Kernel.is_windows?
-    processor, platform, *rest = RUBY_PLATFORM.split("-")
-    platform == 'mingw32'
-end
-
 Vagrant.configure("2") do |config|
   config.vm.hostname = projectname
   config.vm.box = "ubuntu/trusty64"
 # TODO: Change the directory
-  config.vm.network :private_network, ip: "199.199.199.10"
+  config.vm.network :private_network, ip: "10.0.0.7"
 
 # TODO: Change the directory
-  config.vm.synced_folder "../" + projectname , "/var/www/" + projectname + "/current", type: "nfs"
+ config.vm.synced_folder "./", "/var/www/" + projectname + "/current", type: "nfs"
 
   config.vm.provider "virtualbox" do |v|
     v.customize ["modifyvm", :id, "--cpuexecutioncap", "100"]
@@ -26,10 +21,10 @@ Vagrant.configure("2") do |config|
 
   config.ssh.forward_agent = true
 
-  # Ansible
+  # Ansible see https://docs.vagrantup.com/v2/provisioning/ansible.html
   config.vm.provision "ansible" do |ansible|
     ansible.sudo = true
     ansible.playbook = "provisioning/site.yml"
-    ansible.verbose = "v"
+    ansible.verbose = "v" #Use vvvv to have more log
   end
 end

@@ -15,6 +15,17 @@
 
 - name: add www-data to sudoers
   copy: src=etc/sudoers.d/10-www-data dest=/etc/sudoers.d/10-www-data owner=root group=root mode=0440 validate="visudo -cf %s"
+  when: inventory_hostname == "default"
 
-- name: add developer public keys
-  copy: dest=/var/www/.ssh/authorized_keys src=var/www/.ssh/authorized_keys owner=www-data group=www-data mode=0600
+# http://docs.ansible.com/authorized_key_module.html
+- name: Set up authorized_keys for the root user
+  authorized_key: user=www-data
+                  key="{{ item }}"
+  with_items: projects_keys
+  when: projects_keys|length > 0
+
+- name: Set up authorized_keys for the root user
+  authorized_key: user=root
+                  key="{{ item }}"
+  with_items: projects_keys
+  when: projects_keys|length > 0

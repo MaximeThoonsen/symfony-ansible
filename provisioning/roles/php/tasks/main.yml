@@ -1,24 +1,10 @@
 ---
 
-- name: Include OS-specific variables.
-  include_vars: "{{ ansible_os_family }}.yml"
-
-- name: Ensure PHP packages are installed (RedHat).
-  yum:
-    name={{ item }}
-    state=installed
-    enablerepo={{ php_enablerepo }}
-  with_items: php_packages
-  notify: restart webserver
-  when: ansible_os_family == 'RedHat'
-
-- name: Ensure PHP packages are installed (Debian).
+- name: Ensure PHP packages are installed.
   apt:
     name={{ item }}
     state=installed
   with_items: php_packages
-  notify: restart webserver
-  when: ansible_os_family == 'Debian'
 
 - name: Create mods-available directory
   file:
@@ -34,7 +20,6 @@
     group=root
     mode=644
   with_items: php_conf_files
-  notify: restart webserver
 
 - name: Create PHP modules symlinks
   file:
@@ -44,7 +29,6 @@
     owner=root
     group=root
   with_items: php_mods
-  notify: restart webserver
   when: php_mods is defined
 
 - name: Ensure php-fpm is started and enabled at boot (if configured).

@@ -20,6 +20,8 @@
     - make
     - netcat-openbsd
     - ntp
+    - nodejs
+    - npm
     - python-pycurl # needed by ansible module apt_repository
     - python-psycopg2 # needed by ansible module postgresql_db
     - socat
