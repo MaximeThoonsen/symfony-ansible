@@ -9,10 +9,10 @@ symfony-ansible
 
 <h3>Step 2)</h3>
 <p>Change your project's name in the Vagrant file and choose the directory you want to sync at the line:</p>
-<pre>config.vm.synced_folder "../" + projectname , "/var/www/" + projectname + "/current", type: "nfs"</pre>
+<pre>config.vm.synced_folder "./", "/var/www/" + projectname + "/current", type: "nfs"</pre>
 
 <p>You may want to change the ip of the vm at the line</p>
-<pre>  config.vm.network :private_network, ip: "199.199.199.10"</pre>
+<pre>  config.vm.network :private_network, ip: "10.0.0.7"</pre>
 
 <h3>Step 3)</h3>
 <p>Configure your vm in the provisioning/vars/main.yml. Mainly it will be usefull for changing the database information</p> 
