@@ -8,7 +8,7 @@
   roles:
     - common        # Common packages to update
     - nginx-symfony
-    - { role: pjan.vandaele.mysql, tags: mysql  } # Database
+    - { role: ANXS.mysql, tags: mysql  } # Database
     - php
     - Stouts.iptables
     - nickjj.fail2ban
