@@ -28,8 +28,8 @@ You can modify the app_dev.php to be able to access it.
 You are done. 
 
 <h3>How to provision your remote server</h3>
-Update the host in hosts/staging
-Run your remote provisioning with the ansible-playbook command like `ansible-playbook -i provisioning/hosts/prod provisioning/playbook.yml -u root`
+First update the host file in hosts/staging.
+Then run your remote provisioning with the ansible-playbook command like `ansible-playbook -i provisioning/hosts/prod provisioning/playbook.yml -u root`
 
 <h4>Errors you might encountered</h4>
 
