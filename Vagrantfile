@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
   # Ansible see https://docs.vagrantup.com/v2/provisioning/ansible.html
   config.vm.provision "ansible" do |ansible|
     ansible.sudo = true
-    ansible.playbook = "provisioning/site.yml"
+    ansible.playbook = "provisioning/playbook.yml"
     ansible.verbose = "v" #Use vvvv to have more log
   end
 end
