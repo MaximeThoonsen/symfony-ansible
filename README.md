@@ -37,7 +37,9 @@ Then run your remote provisioning with the ansible-playbook command like `ansibl
 Solution:
 Install ansible via github:
 
-$ git clone git://github.com/ansible/ansible.git
-$ cd ./ansible
-$ source ./hacking/env-setup
+`$ git clone git://github.com/ansible/ansible.git`
+
+`$ cd ./ansible`
+
+`$ source ./hacking/env-setup`
 
