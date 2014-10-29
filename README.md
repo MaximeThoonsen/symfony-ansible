@@ -11,7 +11,7 @@ Build your own provisioning with the list of [our best roles](https://github.com
 <p>It installs the Ansible modules needed (If a module is already installed it will show an error but it doesn't matter)</p>
 
 <h3>Step 2)</h3>
-<p>Change your project's name in the Vagrant file and choose the directory you want to sync at the line:</p>
+<p>Change your project's name in the Vagrant file and choose the directory you want to sync (where your symfony project is) at the line:</p>
 <pre>config.vm.synced_folder "./", "/var/www/" + projectname + "/current", type: "nfs"</pre>
 
 <p>You may want to change the ip of the vm at the line</p>
