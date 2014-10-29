@@ -1,0 +1,5 @@
+---
+# Write here the vars that are specific to your host
+host_name: "prod"
+server_name: "prod.project.com"
+iptables_allowed_tcp_ports: [22, 80, 443]

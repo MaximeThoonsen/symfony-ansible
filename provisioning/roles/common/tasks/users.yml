@@ -14,8 +14,11 @@
   file: path=/tmp mode=0777 state=directory
 
 - name: add www-data to sudoers
-  copy: src=etc/sudoers.d/10-www-data dest=/etc/sudoers.d/10-www-data owner=root group=root mode=0440 validate="visudo -cf %s"
-  when: inventory_hostname == "default"
+  copy: src=etc/sudoers.d/10-www-data
+        dest=/etc/sudoers.d/10-www-data
+        owner=root group=root
+        mode=0440 validate="visudo -cf %s"
+  when: inventory_hostname == "vagrant"
 
 # http://docs.ansible.com/authorized_key_module.html
 - name: Set up authorized_keys for the root user

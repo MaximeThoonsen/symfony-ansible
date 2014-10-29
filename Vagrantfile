@@ -25,6 +25,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision "ansible" do |ansible|
     ansible.sudo = true
     ansible.playbook = "provisioning/playbook.yml"
-    ansible.verbose = "v" #Use vvvv to have more log
+    ansible.limit = 'vagrant'
+    ansible.inventory_path = "provisioning/hosts/vagrant"
+    ansible.verbose = "v" #Use vvvv to get more log
   end
 end

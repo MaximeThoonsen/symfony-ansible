@@ -1,7 +1,7 @@
 server {
     listen      {{web.port}};
 
-    server_name {{ web.server_name }};
+    server_name {{ hostvars[inventory_hostname].web.server_name }};
     root        /var/www/{{ name }}/current/web;
 
     error_log /var/www/{{ name }}/current/app/logs/nginx.error.log;

@@ -5,7 +5,6 @@ name: projectname
 
 web:
   port: 80
-  server_name: projectname.local
 
 mysql_databases:
   - name: "{{ name }}"
