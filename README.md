@@ -44,6 +44,8 @@ So it becomes something like: `ansible-playbook -i provisioning/hosts/prod provi
 
 More information on the official [ansible's doc](http://docs.ansible.com/playbooks_vault.html).
 
+<h3>Reminders </h3>
+
 <h4>Errors you might encountered</h4>
 
 1) fatal: [default] => imported module support code does not exist at /usr/local/lib/python2.7/dist-packages/ansible/module_utils/facts.py
