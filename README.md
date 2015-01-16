@@ -33,8 +33,8 @@ First update the host file in hosts/staging.
 Then run your remote provisioning with the ansible-playbook command like `ansible-playbook -i provisioning/hosts/prod provisioning/playbook.yml -u root`
 
 <h3>Optional Step: Use encryption to protect your data</h3>
-You can encrypt your data with `ansible-vault encrypt password/myFileToBeEncrypted.yml`
-You can change the key pass with `ansible-vault rekey password/myEncryptedFile.yml`
+You can encrypt your data with `ansible-vault encrypt provisioning/hosts/group_vars/vagrant`
+You can change the key pass with `ansible-vault rekey provisioning/hosts/group_vars/vagrant`
 
 You can decrypt my sample encrypted file with the "test" password:
 `ansible-vault decrypt vars/encrypted-vars.yml`
