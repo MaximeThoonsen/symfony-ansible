@@ -1,0 +1,6 @@
+ANXS.mysql,v1.0.3
+nickjj.fail2ban,v0.1.2
+Stouts.iptables,1.0.0
+MaximeThoonsen.automysqlbackup,v1.0
+MaximeThoonsen.php5-xdebug,v1.0.5
+kosssi.composer,v1.0.3

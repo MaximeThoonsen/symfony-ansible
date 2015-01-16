@@ -6,9 +6,9 @@ symfony-ansible
 Build your own provisioning with the list of [our best roles](https://github.com/theodo/list-ansible-roles/blob/master/README.md) or have a look in Ansible-Galaxy.
 
 
-<h3>Step 1)</h3>
-<pre>sudo make</pre>
-<p>It installs the Ansible modules needed (If a module is already installed it will show an error but it doesn't matter)</p>
+<h3>Step 1) Install the Ansible's roles</h3>
+<pre>ansible-galaxy install -r requirements.txt --force</pre>
+<p>You can choose where you want your vendors to be stored in th ansible.cfg file</p>
 
 <h3>Step 2)</h3>
 <p>Change your project's name in the Vagrant file and choose the directory you want to sync (where your symfony project is) at the line:</p>

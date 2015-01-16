@@ -10,6 +10,7 @@
     - nginx-symfony
     - { role: ANXS.mysql, tags: mysql  } # Database
     - php
+    - { role: kosssi.composer }
     - Stouts.iptables
     - nickjj.fail2ban
     - MaximeThoonsen.automysqlbackup
