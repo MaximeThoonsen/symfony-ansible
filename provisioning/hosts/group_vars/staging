@@ -3,3 +3,5 @@
 host_name: "staging"
 server_name: "staging.project.com"
 iptables_allowed_tcp_ports: [22, 80, 443]
+
+password_file: staging.yml

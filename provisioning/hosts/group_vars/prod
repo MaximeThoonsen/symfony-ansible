@@ -3,3 +3,5 @@
 host_name: "prod"
 server_name: "prod.project.com"
 iptables_allowed_tcp_ports: [22, 80, 443]
+
+password_file: prod.yml

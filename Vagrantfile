@@ -28,5 +28,6 @@ Vagrant.configure("2") do |config|
     ansible.limit = 'vagrant'
     ansible.inventory_path = "provisioning/hosts/vagrant"
     ansible.verbose = "v" #Use vvvv to get more log
+    #ansible.ansible.ask_vault_pass = true #ask for the vault password
   end
 end
