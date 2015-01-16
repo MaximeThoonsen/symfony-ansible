@@ -9,11 +9,6 @@ web:
 mysql_databases:
   - name: "{{ name }}"
 
-mysql_users:
-  - name: "{{ name }}"
-    pass: "{{ name }}"
-    host: "%"
-
 iptables_allowed_tcp_ports: [22, 80, 443]
 
 projects_keys:

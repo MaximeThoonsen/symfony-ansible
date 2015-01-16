@@ -1,7 +1,11 @@
 ---
 # Write here the vars that are specific to your host
 host_name: "staging"
-server_name: "staging.project.com"
+web:
+    server_name: "staging.project.com"
 iptables_allowed_tcp_ports: [22, 80, 443]
 
-password_file: staging.yml
+mysql_users:
+  - name: "{{ name }}"
+    host: "%"
+    pass: "{{ name }}"

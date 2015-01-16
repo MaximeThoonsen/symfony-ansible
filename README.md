@@ -37,7 +37,7 @@ You can encrypt your data with `ansible-vault encrypt password/myFileToBeEncrypt
 You can change the key pass with `ansible-vault rekey password/myEncryptedFile.yml`
 
 You can decrypt my sample encrypted file with the "test" password:
-`ansible-vault decrypt password/prod.yml`
+`ansible-vault decrypt vars/encrypted-vars.yml`
 
 To run your ansible script you'll need to add the `--ask-vault-pass` tag.
 So it becomes something like: `ansible-playbook -i provisioning/hosts/prod provisioning/playbook.yml -u root --ask-vault-pass`
