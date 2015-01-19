@@ -1,10 +1,15 @@
 symfony-ansible
 ===============
 
-<p>This repo will provide you an easy set-up for your symfony project. It provide the Vagrantfile to create your Ubuntu Trusty 64bits VM and it uses Ansible to provision it. You can also use ansible to provision your server</p>
+This repo will provide you an easy set-up for your symfony project.
+It provide the Vagrantfile to create your Ubuntu Trusty 64bits VM and it uses Ansible to provision it.
+You can also use Ansible to provision your remote server.
+I have also added a sample configuration for Capifony; a tool to deploy your code on your server.
 
-Build your own provisioning with the list of [our best roles](https://github.com/theodo/list-ansible-roles/blob/master/README.md) or have a look in Ansible-Galaxy.
+TL;DR Ansible to configure your servers/VMs and Capifony to deploy the code on your servers.
 
+I have made a basic Ansible provisioning that will be sufficient to run symfony but you need to customize it a bit more.
+If so you should have a look at the list of [our best roles](https://github.com/theodo/list-ansible-roles/blob/master/README.md).
 
 <h3>Step 1) Install the Ansible's roles</h3>
 <pre>ansible-galaxy install -r requirements.txt --force</pre>
@@ -44,7 +49,24 @@ So it becomes something like: `ansible-playbook -i provisioning/hosts/prod provi
 
 More information on the official [ansible's doc](http://docs.ansible.com/playbooks_vault.html).
 
-<h3>Reminders </h3>
+<h3>About the tools</h3>
+<h4>Vagrant</h4>
+Vagrant is a nice tool to build VMs on your machine.
+You will need to install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html) obviously.
+
+To start the VM : `vagrant up`
+To provision the VM : `vagrant provision`
+To log in the VM : `vagrant ssh`
+To stop the VM : `vagrant halt`
+To delete the VM : `vagrant destroy`
+
+<h4>Capistrano/Capifony</h4>
+[Capifony](http://capifony.org/) is based on [Capistrano](http://capistranorb.com/) and allows you to deploy your symfony's application on a remote server easily.
+1) You need to have installed [rubygems](https://rubygems.org/pages/download) then you can run `bundle install`.
+2) Configure your staging ou prod access in `app/config/deploy/prod.rb`
+3) Deploy your application for the prod/staging : `bundle exec cap **prod** deploy`
+
+If your deployment fails, you can use `bundle exec cap prod deploy --debug` to enter a step by step mode.
 
 <h4>Errors you might encountered</h4>
 

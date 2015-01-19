@@ -1,4 +1,4 @@
-set :application, "we-square"
+set :application, "projectname"
 
 # multiple stages
 set :stages,                ["staging"]
