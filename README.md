@@ -1,5 +1,7 @@
-symfony-ansible
-===============
+# /!\ Deprecated /!\
+See https://github.com/fansible/tywin for the newer version.
+
+#symfony-ansible
 
 This repo will provide you an easy set-up for your symfony project.
 It provide the Vagrantfile to create your Ubuntu Trusty 64bits VM and it uses Ansible to provision it.
